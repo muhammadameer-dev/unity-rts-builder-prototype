@@ -27,10 +27,28 @@ public class GridManager : MonoBehaviour
     public Vector2Int WorldToGrid(Vector3 worldPos)
     {
         return new Vector2Int(
-            Mathf.RoundToInt(worldPos.x / cellSize),
-            Mathf.RoundToInt(worldPos.z / cellSize)
+            Mathf.FloorToInt(worldPos.x / cellSize),
+            Mathf.FloorToInt(worldPos.z / cellSize)
         );
     }
+
+    public Vector3 BuildingSnapPosition(Vector2Int buildingSize, Vector2Int gridPos)
+    {
+        // Center offset for even/odd sizes
+        Vector2 offset = new Vector2(
+            (buildingSize.x % 2 == 0) ? (buildingSize.x / 2f - 0.5f) : (buildingSize.x / 2f),
+            (buildingSize.y % 2 == 0) ? (buildingSize.y / 2f - 0.5f) : (buildingSize.y / 2f)
+        );
+
+        // Shift grid position to match building footprint
+        Vector2 adjustedGridPos = new Vector2(
+            gridPos.x + offset.x,
+            gridPos.y + offset.y
+        );
+
+        return new Vector3(adjustedGridPos.x * cellSize, 0, adjustedGridPos.y * cellSize);
+    }
+
 
     public bool CanPlace(Vector2Int startPos, Vector2Int size)
     {
@@ -80,7 +98,7 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 Vector3 pos = new Vector3(x * cellSize, 0, y * cellSize);
-                Gizmos.DrawWireCube(pos + Vector3.one * cellSize * 0.5f, Vector3.one * cellSize);
+                Gizmos.DrawWireCube(pos + 0.5f * cellSize * Vector3.one, Vector3.one * cellSize);
             }
         }
     }

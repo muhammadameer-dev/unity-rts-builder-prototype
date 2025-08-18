@@ -7,12 +7,30 @@ public class PreviewRenderer : MonoBehaviour
 
     public void SpawnPreview(GameObject prefab)
     {
-        if (previewObject != null) Destroy(previewObject);
+        if (previewObject != null)
+            Destroy(previewObject);
+
         previewObject = Instantiate(prefab);
-        previewMat = new Material(previewObject.GetComponent<Renderer>().sharedMaterial);
-        previewObject.GetComponent<Renderer>().material = previewMat;
-        previewMat.color = new Color(0, 1, 0, 0.5f);
+
+        // Try to get renderer from root first, fallback to children
+        Renderer renderer = previewObject.GetComponent<Renderer>();
+        if (renderer == null)
+            renderer = previewObject.GetComponentInChildren<Renderer>();
+
+        if (renderer == null)
+        {
+            Debug.LogError($"[SpawnPreview] No Renderer found on prefab '{prefab.name}' or its children.");
+            return;
+        }
+
+        // Create material instance
+        previewMat = new Material(renderer.sharedMaterial);
+        renderer.material = previewMat;
+
+        // Apply transparent green preview
+        previewMat.color = new Color(0f, 1f, 0f, 0.5f);
     }
+
 
     public void UpdatePreview(Vector3 worldPosition, int rotationY, bool canPlace)
     {

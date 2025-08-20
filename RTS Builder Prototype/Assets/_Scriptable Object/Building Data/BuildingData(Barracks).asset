@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuildingData(Barracks)
   m_EditorClassIdentifier: 
   buildingName: Barracks
-  buildingPrefab: {fileID: 4645881498148354518, guid: 6b2a7b412f644984381e26e1e20ad429, type: 3}
+  buildingPrefab: {fileID: 4180445216371715552, guid: 6b2a7b412f644984381e26e1e20ad429, type: 3}
   size: {x: 2, y: 2}
   resourceCosts:
   - resourceType: 0

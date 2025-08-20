@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuildingData(Archery)
   m_EditorClassIdentifier: 
   buildingName: Archery
-  buildingPrefab: {fileID: 5464316192354117293, guid: be54855bb82b00740a4a7ab644c0c846, type: 3}
+  buildingPrefab: {fileID: 5660213520954357583, guid: be54855bb82b00740a4a7ab644c0c846, type: 3}
   size: {x: 2, y: 2}
   resourceCosts:
   - resourceType: 1

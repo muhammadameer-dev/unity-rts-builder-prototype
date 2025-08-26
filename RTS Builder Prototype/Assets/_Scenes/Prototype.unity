@@ -1420,7 +1420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1167235535
 Transform:
   m_ObjectHideFlags: 0
@@ -1820,6 +1820,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898010042}
   m_CullTransparentMesh: 1
+--- !u!1 &2076140073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2076140074}
+  - component: {fileID: 2076140075}
+  m_Layer: 0
+  m_Name: Grid Visual Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2076140074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076140073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076140075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076140073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be899a126afbe78469b484fb85dfeac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridCanvasPrefab: {fileID: 7023326040891081459, guid: 2806084460adbe5498d0a2716b84c695, type: 3}
+  gridImageSprite: {fileID: 21300000, guid: 15440193c95665f488ae3b00e1fdbdbf, type: 3}
+  gridSize: {x: 20, y: 20}
+  cellSize: 1
+  showColor: {r: 1, g: 1, b: 1, a: 1}
+  hideColor: {r: 0, g: 0, b: 0, a: 0}
+  colorTransitionSpeed: 0
+  currentMode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1827,3 +1879,4 @@ SceneRoots:
   - {fileID: 766263314}
   - {fileID: 1040540591}
   - {fileID: 1167235535}
+  - {fileID: 2076140074}

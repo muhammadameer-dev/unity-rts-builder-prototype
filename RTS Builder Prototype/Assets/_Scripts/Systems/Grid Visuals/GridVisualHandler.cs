@@ -22,7 +22,7 @@ public class GridVisualHandler : MonoBehaviour
 
     void Start()
     {
-        Initialize(Vector3.zero, Vector3.zero);
+        Initialize(new Vector3(0, 0.2f, 0), new Vector3(90, 0, 0));
     }
 
     void Update()
